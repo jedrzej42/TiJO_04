@@ -14,7 +14,7 @@ describe('app', function () {
             expect(app.divide(-2, 6)).toEqual(false);
         });
         it('should return false when a is more than 100', function () {
-            expect(app.divide(105, 3)).toEqual(false);
+            expect(app.divide(105, 3)).toEqual(false)
         });
         it('should divide number a by b when a is 1', function () {
             expect(app.divide(1, -1)).toEqual(-1);
@@ -34,5 +34,45 @@ describe('app', function () {
         it('should return false when b is equal 0', function () {
             expect(app.divide(101, 0)).toEqual(false);
         });
-    });
+    })
+    describe('Descending function', function () {
+        it('should return false when numberTo is greater than numberFrom', function () {
+            expect(app.getDescendingNumbers(10,20)).toEqual(false);
+        });
+        it('should return false when numberTo is equal numberFrom', function(){
+            expect(app.getDescendingNumbers(10,10)).toEqual(false);
+        });
+        it('should return descending numbers when numberFrom is greater than numberTo', function(){
+            expect(app.getDescendingNumbers(5,1)).toEqual('5 4 3 2 1');
+        });
+        it('should return false when numberFrom is not a number', function(){
+            expect(app.getDescendingNumbers('a',10)).toEqual(false);
+        });
+        it('should return false when numberTo is not a number', function(){
+            expect(app.getDescendingNumbers(10,'b')).toEqual(false);
+        });
+
+    })
+
+    describe('Area of Trapezoid function', function () {
+        it('should return area of trapezoid', function () {
+            expect(app.areaOfTrapezoid(2,4,2)).toEqual(6);
+            expect(app.areaOfTrapezoid(4,8,6)).toEqual(36);
+        });
+        it('should return false when a is less than 0', function () {
+            expect(app.areaOfTrapezoid(-1,4,2)).toEqual(false);
+        });
+        it('should return false when b is less than 0', function () {
+            expect(app.areaOfTrapezoid(2,-4,2)).toEqual(false);
+        });
+        it('should return false when h is less than 0', function () {
+            expect(app.areaOfTrapezoid(8,4,-2)).toEqual(false);
+        });
+        it('should return false when a, b or c is not a number', function () {
+            expect(app.areaOfTrapezoid('a',4,2)).toEqual(false);
+            expect(app.areaOfTrapezoid(8,'b',2)).toEqual(false);
+            expect(app.areaOfTrapezoid(5,9,'c')).toEqual(false);
+        });
+
+    })
 });
