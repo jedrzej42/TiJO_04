@@ -76,7 +76,7 @@ describe('app', function () {
 
     describe("MaxArray function", function() {
         it("should return max number in array of numbers", function() {
-            expect(app.maxArray([3,8,2])).toEqual(3);
+            expect(app.maxArray([3,8,2])).toEqual(8);
         });
         it("should return false when array value is not a number", function() {
             expect(app.maxArray([1,2,3,"d"])).toEqual(false);
