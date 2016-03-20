@@ -51,7 +51,6 @@ describe('app', function () {
         it('should return false when numberTo is not a number', function(){
             expect(app.getDescendingNumbers(10,'b')).toEqual(false);
         });
-
     })
 
     describe('Area of Trapezoid function', function () {
@@ -73,6 +72,25 @@ describe('app', function () {
             expect(app.areaOfTrapezoid(8,'b',2)).toEqual(false);
             expect(app.areaOfTrapezoid(5,9,'c')).toEqual(false);
         });
-
     })
+
+    describe("MaxArray function", function() {
+        it("should return max number in array of numbers", function() {
+            expect(app.maxArray([3,8,2])).toEqual(3);
+        });
+        it("should return false when array value is not a number", function() {
+            expect(app.maxArray([1,2,3,"d"])).toEqual(false);
+        });
+    })
+
+    describe("SquareOdd function", function() {
+        it("should square every odd number", function() {
+            expect(app.squareOdd([1, 2, 3, 4])).toEqual([1, 2, 9, 4]);
+            expect(app.squareOdd(["4", 3, 2, 1])).toEqual(["4", 9, 2, 1]);
+        });
+        it("should return false when array element is not number or string", function() {
+            expect(app.squareOdd([[1,2],[3,4]])).toEqual(false);
+        });
+    })
+
 });
